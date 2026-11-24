@@ -694,7 +694,8 @@ function stepForMessage(
 		case ClientOp.ACTION:
 			return action(lobby, senderId, data, {
 				now: Date.now(),
-				newSeed: () => seedFromHex(nk.uuidv4()),
+				newSeed: () => seedFromHex(nk.uuidv4() + nk.uuidv4()),
+				//without this, last 6 characters become 1s
 				newId: () => nk.uuidv4(),
 				random: Math.random,
 			})
