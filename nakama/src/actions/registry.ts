@@ -475,7 +475,8 @@ export function authoritativeAction(key: string): AuthoritativeAction | null {
 
 // Balatro's seed alphabet: 1-9 and A-Z without O (G.CONTROLLER seed entry).
 const SEED_ALPHABET = '123456789ABCDEFGHIJKLMNPQRSTUVWXYZ'
-export const SEED_LENGTH = 8
+export const SEED_LENGTH = 16
+//Increased to 16 to prevent brute force seedcracking
 
 // Turns random hex (e.g. a UUID) into a Balatro seed.
 export function seedFromHex(hex: string): string {
